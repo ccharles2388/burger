@@ -9,7 +9,7 @@ module.exports = function()  {
         host: "localhost",
         port: 3306,
         user: "root", //Your username
-        password: "", //Your password
+        password: "random04", //Your password
         database: "burgers_db"
       });
 
