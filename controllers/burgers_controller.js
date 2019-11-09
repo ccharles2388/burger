@@ -1,33 +1,50 @@
-var express = require("express");
-var router = express.Router();
-var burger = require("../models/burger.js");
+const express = require('express');
 
-router.get('/', function(req, res)  {
-  res.redirect('/burgers');
-});
+const router = express.Router();
 
-router.get('/burgers', function(req, res) {
+// Import the model (burger.js) to use its database functions.
+const burger = require('../models/burger.js');
 
-  burger.selectAll(function(data) {
-    res.render('index',{burgers: data})
+// Create all our routes and set up logic within those routes where required.
+router.get('/', function(req, res) {
+  burger.all(function(data) {
+    const hbsObject = {
+      burgers: data,
+    };
+    console.log(hbsObject);
+    res.render('index', hbsObject);
   });
-
 });
 
-router.post('/burgers/create', function(req, res) {
-
-  burger.insertOne(req.body.burgerName, req.body.devoured, function() {
-    res.redirect('/burgers');
-  });
-
+router.post('/api/burgers', function(req, res) {
+  burger.create(
+      ['name', 'sleepy'],
+      [req.body.name, req.body.sleepy],
+      function(result) {
+        // Send back the ID of the new quote
+        res.json({id: result.insertId});
+      });
 });
 
-router.put('/burgers/update/devour/:id', function(req, res)  {
+router.put('/api/burgers/:id', function(req, res) {
+  const condition = 'id = ' + req.params.id;
 
-  burger.updateOne(req.params.id, function() {
-    res.redirect('/burgers');
-  });
+  console.log('condition', condition);
 
+  burger.update(
+      {
+        sleepy: req.body.sleepy,
+      },
+      condition,
+      function(result) {
+        if (result.changedRows === 0) {
+        // If no rows were changed, then the ID must not exist, so 404
+          return res.status(404).end();
+        }
+        res.status(200).end();
+      },
+  );
 });
 
+// Export routes for server.js to use.
 module.exports = router;
