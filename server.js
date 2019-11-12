@@ -27,10 +27,12 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Set Routes And Give Access To Them
 const routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
+// Start Server And Listening On Active Server Port
 app.listen(PORT, function() {
     console.log(`SERVER LISTENING ON: http://localhost:${PORT}`);
     console.log('----------------------------');
