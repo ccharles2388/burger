@@ -22,5 +22,6 @@ var burger = {
       cb(res);
     });
   }
+};
 
-module.exports = model;
+module.exports = burger;
