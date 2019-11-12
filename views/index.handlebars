@@ -1,42 +1,65 @@
-<h1>Curtis Charles Eat-Da-Burger Spot!</h1>
+<!-- HEADER SECTION -->
+<div class="header">
+  <h1 class="move-center">Eat Da Yummy Burger</h1>
+</div>
 
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="col s6">
-        {{#each burgers}}
-          {{#unless this.devoured}}
-            <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
-            </div>
-          {{/unless}}
-        {{/each}}
-      </div>
+<!-- MAIN SECTION -->
+<div class="main">
 
-      <div class="col s6">
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <div class='burgerEaten'>
-              <div>
-                {{this.burger_name}}
-              </div>
-            </div>
-          {{/if}}
-        {{/each}}
-      </div>
+  <div class="left move-center">
+    <h2>Delicious Burgers Available</h2>
+    {{#each burgers}}
+      {{#unless this.devoured}}
+        <div>
+          <h4>{{this.burger_name}}</h4>
+        </div>
+        <div>
+          <img src="/public/assets/img/burger.jpeg">
+        </div>
+        <div>
+          <form action="burgers/update/devour/{{this.id}}?_method=PUT" method="POST">
+            <button class="btn" type="submit">Devour Me!!</button>
+          </form>
+        </div>
+      {{/unless}}
+    {{/each}}
+  </div>
+
+  <div class="right move-center">
+    <h2 class="text-center">Delicious Burgers Devoured</h2>
+    {{#each burgers}}
+      {{#if this.devoured}}
+        <div>
+          <h4>{{this.burger_name}}</h4>
+        </div>
+        <div>
+          <img src="/public/assets/img/burger.jpeg">
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
+
+  <div class="new-burger move-center">
+    <h2>Add a New Burger</h2>
+    <div>
+      <form action="burgers/create" method="POST">
+        <div class="form-group">
+          <label for="bn">Burger Name : </label>
+          <input type="text" id="bn" name="burger_name">
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="dchoice">Eaten?</label><br>
+          <input type="radio" name="devoured" value="0" checked>Not Devoured<br>
+          <input type="radio" name="devoured" value="1">Devoured<br><br>
+        </div>
+        <button class="newBurgerBtn" type="submit">Burger It!</button>
+      </form>
     </div>
   </div>
-</main>
 
-<h2>Add A Burger Option</h2>
+</div>
 
-<div class="row">
-  <div class="col s12">
-    <form action="/burgers" method="POST">
-      <input type="text" id="name" name="burger_name" placeholder="Uber Delicious Burger">
-      <button type="submit" class="addBurgerButton">Add The Burger</button>
-    </form>
-  </div>
+<!-- FOOTER SECTION -->
+<div class="footer">
 </div>
