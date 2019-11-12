@@ -1,24 +1,26 @@
 var orm = require("../config/orm.js");
 
-var model = {
-
-  selectAll : function(callback)  {
-    orm.selectAll("burgers", function(data) {
-      callback(data);
+var burger = {
+  all: function(cb) {
+    orm.all("burgers", function(res) {
+      cb(res);
     });
   },
-
-  insertOne : function(burgerName, burgerDevoured, callback)  {
-    orm.insertOne("burgers", burgerName, burgerDevoured, function(data) {
-      callback(data);
+  // The variables cols and vals are arrays.
+  create: function(cols, vals, cb) {
+    orm.create("burgers", cols, vals, function(res) {
+      cb(res);
     });
   },
-
-  updateOne : function(burgerID, callback)  {
-    orm.updateOne("burgers", burgerID, function(data) {
-      callback(data);
+  update: function(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, function(res) {
+      cb(res);
+    });
+  },
+  delete: function(condition, cb) {
+    orm.delete("burgers", condition, function(res) {
+      cb(res);
     });
   }
-};
 
 module.exports = model;
