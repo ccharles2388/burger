@@ -11,24 +11,22 @@ router.get('/', function(req, res) {
     const hbsObject = {
       burgers: data,
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render('index', hbsObject);
   });
 });
 
 router.post('/burgers/create', function(req, res) {
-  console.log(req.body);
   burgers.create(
       ['burger_name', 'devoured'],
       [req.body.burger_name, req.body.devoured],
       function(result) {
         // Send back the ID of the new quote
-        console.log(result);
         res.json({id: result});
       });
 });
 
-router.put('/burgers/:id', function(req, res) {
+router.put('/burgers/update/devour/:id', function(req, res) {
   const condition = 'id = ' + req.params.id;
 
   console.log('condition', condition);
