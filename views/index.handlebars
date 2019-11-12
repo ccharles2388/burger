@@ -1,13 +1,13 @@
 <!-- HEADER SECTION -->
 <div class="header">
-  <h1 class="move-center">Eat Da Yummy Burger</h1>
+  <h2 class="move-center">Eat Da Yummy Burger</h2>
 </div>
 
 <!-- MAIN SECTION -->
 <div class="main">
 
   <div class="left move-center">
-    <h2>Delicious Burgers Available</h2>
+    <h3>Delicious Burgers Available</h3>
     {{#each burgers}}
       {{#unless this.devoured}}
         <div>
@@ -26,7 +26,7 @@
   </div>
 
   <div class="right move-center">
-    <h2 class="text-center">Delicious Burgers Devoured</h2>
+    <h3 class="text-center">Delicious Burgers Devoured</h3>
     {{#each burgers}}
       {{#if this.devoured}}
         <div>
