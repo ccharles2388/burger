@@ -9,43 +9,43 @@
   <div class="left move-center">
     <h3>Delicious Burgers Available</h3>
     {{#each burgers}}
-      {{#unless this.devoured}}
-        <div>
-          <h4>{{this.burger_name}}</h4>
-        </div>
-        <div>
-          <img src="/public/assets/img/burger.jpeg">
-        </div>
-        <div>
-          <form action="burgers/update/devour/{{this.id}}?_method=PUT" method="POST">
-            <button class="btn" type="submit">Devour Me!!</button>
-          </form>
-        </div>
-      {{/unless}}
+    {{#unless this.devoured}}
+    <div>
+      <h4>{{this.burger_name}}</h4>
+    </div>
+    <div>
+      <img src="/public/assets/img/burger.jpeg">
+    </div>
+    <div>
+      <form >
+        <button class="btn" onclick="devouerBurger({{this.id}})" type="button">Devour Me!!</button>
+      </form>
+    </div>
+    {{/unless}}
     {{/each}}
   </div>
 
   <div class="right move-center">
     <h3 class="text-center">Delicious Burgers Devoured</h3>
     {{#each burgers}}
-      {{#if this.devoured}}
-        <div>
-          <h4>{{this.burger_name}}</h4>
-        </div>
-        <div>
-          <img src="/public/assets/img/burger.jpeg">
-        </div>
-      {{/if}}
+    {{#if this.devoured}}
+    <div>
+      <h4>{{this.burger_name}}</h4>
+    </div>
+    <div>
+      <img src="/public/assets/img/burger.jpeg">
+    </div>
+    {{/if}}
     {{/each}}
   </div>
 
   <div class="new-burger move-center">
     <h2>Add a New Burger</h2>
     <div>
-      <form action="burgers/create" method="POST">
+      <form>
         <div class="form-group">
           <label for="bn">Burger Name : </label>
-          <input type="text" id="bn" name="burger_name">
+          <input id='burger_name' type="text" id="bn" name="burger_name">
         </div>
         <br>
         <div class="form-group">
@@ -53,7 +53,7 @@
           <input type="radio" name="devoured" value="0" checked>Not Devoured<br>
           <input type="radio" name="devoured" value="1">Devoured<br><br>
         </div>
-        <button class="newBurgerBtn" type="submit">Burger It!</button>
+        <button onclick='addBurger()' class="newBurgerBtn" type="button">Burger It!</button>
       </form>
     </div>
   </div>
@@ -63,3 +63,27 @@
 <!-- FOOTER SECTION -->
 <div class="footer">
 </div>
+
+<script>
+  async function  addBurger() {
+    const burger_name = document.getElementById('burger_name').value
+    await fetch('/api/burgers', {
+      method: 'POST',
+       headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({burger_name, devoured: false })
+    })
+    window.location.reload()
+  }
+
+  async function devouerBurger(id) {
+     const burger_name = document.getElementById('burger_name').value
+    await fetch(`/api/burgers/${id}`, {
+      method: 'PUT',
+     
+     
+    })
+    window.location.reload()
+  }
+</script>
