@@ -6,40 +6,46 @@
 <!-- MAIN SECTION -->
 <div class="main">
 
-  <div class="left move-center">
-    <h3>Delicious Burgers Available</h3>
-    {{#each burgers}}
-    {{#unless this.devoured}}
-    <div>
-      <h4>{{this.burger_name}}</h4>
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Delicious Burgers Available</h3>
+      {{#each burgers}}
+      {{#unless this.devoured}}
+      <div>
+        <h4>{{this.burger_name}}</h4>
+      </div>
+      <div>
+        <img src="/assets/img/burger.jpeg" width="50px">
+      </div>
+      <div>
+        <form>
+          <button class="btn" onclick="devouerBurger({{this.id}})" type="button">Devour Me!!</button>
+        </form>
+      </div>
+      {{/unless}}
+      {{/each}}
     </div>
-    <div>
-      <img src="/public/assets/img/burger.jpeg">
+    <div class="col-md-4">
+      <h3 class="text-center">Delicious Burgers Devoured</h3>
+      {{#each burgers}}
+      {{#if this.devoured}}
+      <div>
+        <h4>{{this.burger_name}}</h4>
+      </div>
+      <div>
+        <img src="/assets/img/burger.jpeg" width="50px">
+      </div>
+      {{/if}}
+      {{/each}}
     </div>
-    <div>
-      <form >
-        <button class="btn" onclick="devouerBurger({{this.id}})" type="button">Devour Me!!</button>
-      </form>
-    </div>
-    {{/unless}}
-    {{/each}}
   </div>
 
-  <div class="right move-center">
-    <h3 class="text-center">Delicious Burgers Devoured</h3>
-    {{#each burgers}}
-    {{#if this.devoured}}
-    <div>
-      <h4>{{this.burger_name}}</h4>
-    </div>
-    <div>
-      <img src="/public/assets/img/burger.jpeg">
-    </div>
-    {{/if}}
-    {{/each}}
-  </div>
+</div>
 
-  <div class="new-burger move-center">
+
+
+<div class="row">
+  <div class="col-md-4">
     <h2>Add a New Burger</h2>
     <div>
       <form>
@@ -57,7 +63,7 @@
       </form>
     </div>
   </div>
-
+</div>
 </div>
 
 <!-- FOOTER SECTION -->
@@ -65,24 +71,24 @@
 </div>
 
 <script>
-  async function  addBurger() {
+  async function addBurger() {
     const burger_name = document.getElementById('burger_name').value
     await fetch('/api/burgers', {
       method: 'POST',
-       headers: {
+      headers: {
         'content-type': 'application/json'
       },
-      body: JSON.stringify({burger_name, devoured: false })
+      body: JSON.stringify({ burger_name, devoured: false })
     })
     window.location.reload()
   }
 
   async function devouerBurger(id) {
-     const burger_name = document.getElementById('burger_name').value
+    const burger_name = document.getElementById('burger_name').value
     await fetch(`/api/burgers/${id}`, {
       method: 'PUT',
-     
-     
+
+
     })
     window.location.reload()
   }
