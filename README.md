@@ -23,6 +23,36 @@ Yourway-Burger is a node-based application -- basically a on demand burger resta
 
 Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/public/assets/img/Screenshot_1.png)
 <br>
+3. User Is Displayed YourWay Burger Application 
+![GitHub Logo](/public/assets/img/Screenshot_2.png)
+
+Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/public/assets/img/Screenshot_2.png)
+<br>
+4. User Is Displayed YourWay Burger Application 
+![GitHub Logo](/public/assets/img/Screenshot_3.png)
+
+Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/public/assets/img/Screenshot_3.png)
+<br>
+5. User Is Displayed YourWay Burger Application 
+![GitHub Logo](/public/assets/img/Screenshot_4.png)
+
+Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/public/assets/img/Screenshot_4.png)
+<br>
+6. User Is Displayed YourWay Burger Application 
+![GitHub Logo](/public/assets/img/Screenshot_5.png)
+
+Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/public/assets/img/Screenshot_5.png)
+<br>
+7. User Is Displayed YourWay Burger Application 
+![GitHub Logo](/public/assets/img/Screenshot_6.png)
+
+Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/public/assets/img/Screenshot_6.png)
+<br>
+8. User Is Displayed YourWay Burger Application 
+![GitHub Logo](/public/assets/img/Screenshot_7.png)
+
+Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/public/assets/img/Screenshot_7.png)
+<br>
 
 ### Main File Structure Overview
 
