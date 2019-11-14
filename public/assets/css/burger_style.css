@@ -3,14 +3,14 @@ body{
   background-color: orangered;
 }
 
-h1, h2, button{
+h1, h2 {
   font-family: 'Luckiest Guy', cursive;
 }
 
-.jumbotron{
-  background-color:black;
-  padding: 2%;
-  color: white;
-  background-image: url("../img/space.jpg");
-  background-size: 100% 100%;
+
+
+button {
+  color: olivedrab;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }

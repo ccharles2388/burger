@@ -1,11 +1,15 @@
-# burger
-Node Express Handlebars Restaurant Application
-YourWay-Burger Is  Full Stack Name Your Burger Application
-YourWay-Burger - Node and Express Servers
-
-### https://yourway-burger.herokuapp.com/
+# YourWay Burger
 
 ## Overview:
+
+Yourway-Burger is a node-based application -- basically a on demand burger restaurant
+Server Node Express Handlebars Restaurant Application string Data In A MySQL Database
+It Allows A Customer To Crate A Unique Burger To Be Ordered, It Shows Up Availiable And Then Sends It To A Devour Section, Ready For The Customer.
+
+## Access Is Deployed On A Heroku Platform Linked By The URL Below
+### https://yourway-burger.herokuapp.com/
+
+## File Structure:
 
 Yourway-Burger is a node-based application -- basically a on demand burger restaurant
 
