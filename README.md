@@ -56,7 +56,7 @@ Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/p
 
 ### Main File Structure Overview
 
-1. The `server.js` file  requires the basic npm packages : `express`, `body-parser` and `path`.
+1. The `server.js` file  requires the basic npm packages : `express`, `.config`,`body-parser` and `path`.
 
 2. The `htmlRoutes.js` file includes two routes in the routing folder which resides under the app folder:
 
@@ -68,7 +68,7 @@ Format: ![Direct Image Link]https://github.com/ccharles2388/burger/blob/master/p
    * A GET route with the url `/api/friends`displays on the main home page. This also displays a JSON of all possible friends.
    * A POST routes `/api/friends`, handles incoming survey results. This route is also  used to handle the compatibility logic.
 
-4. Application data is saved inside of `app/data/friends.js` as an array of objects. Each of these objects follows the format below:
+4. Application data is saved inside  a MySQL Database. Each of these objects follows the format below:
 
 ## Technologies Used:
 
