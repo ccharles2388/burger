@@ -15,9 +15,14 @@ Yourway-Burger is a node-based application -- basically a on demand burger resta
 
 
 
-### Friend Finder Plus Application Features And Screen Shots
+### YourWay-Burger Application Features And Screen Shots
 
 1. User goes to https://yourway-burger.herokuapp.com/ and is displayed a survey. The survey has 10 questions. Each answer should be on a scale of 1 to 5 based on how much the user agrees or disagrees with a question.
+2. User Is Displayed Friend Finder Plus Application 
+![GitHub Logo](/public/assets/img/ff_1.png)
+
+Format: ![Direct Image Link]https://github.com/ccharles2388/FriendFinder/blob/master/img/ff_1.png)
+<br>
 
 ### Main File Structure Overview
 
